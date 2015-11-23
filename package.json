@@ -19,7 +19,6 @@
   "dependencies": {
     "active-event-stack": "^1.0.0",
     "classnames": "^2.1.2",
-    "dynamics.js": "0.0.7",
     "immutable": "^3.7.4",
     "jss": "^3.1.0",
     "jss-camel-case": "^1.0.0",

@@ -1,7 +1,6 @@
 import React, {PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import dynamics from 'dynamics.js';
 import centerComponent from 'react-center-component';
 import useSheet from './useSheet';
 import CloseCircle from './CloseCircle';
@@ -28,9 +27,6 @@ import keycode from 'keycode';
     width: 40,
     height: 40,
     transition: 'transform 0.1s',
-    // backgroundImage: require('../images/modal-dialog-close.png'),
-    // backgroundRepeat: 'no-repeat',
-    // backgroundSize: '40px 40px',
     '&:hover': {
       transform: 'scale(1.1)',
     },
@@ -91,36 +87,6 @@ export default class ModalDialog extends React.Component {
         this.props.onClose();
       }
     }
-  }
-  componentWillReceiveProps = (nextProps) => {
-    if (nextProps.componentIsLeaving && !this.props.componentIsLeaving) {
-      const node = ReactDOM.findDOMNode(this);
-      dynamics.animate(node, {
-        scale: 1.2,
-        opacity: 0,
-      }, {
-        duration: 300,
-        type: dynamics.easeIn,
-      });
-    }
-  }
-  componentDidMount = () => {
-    // Animate this node once it is mounted
-    const node = ReactDOM.findDOMNode(this);
-
-    if (document.body.style.transform == undefined) {
-      node.style.WebkitTransform = 'scale(0.5)';
-    } else {
-      node.style.transform = 'scale(0.5)';
-    }
-
-    dynamics.animate(node, {
-      scale: 1,
-    }, {
-      type: dynamics.spring,
-      duration: 500,
-      friction: 400,
-    });
   }
   render = () => {
     const {
