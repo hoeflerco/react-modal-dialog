@@ -1,5 +1,4 @@
 import React, {PropTypes} from 'react';
-import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import centerComponent from 'react-center-component';
 import useSheet from './useSheet';
